@@ -204,7 +204,7 @@ $(so_lib_name): $(shared_objs) $(aobjs)
 	@(cd $(@D); ln -f -s $(so_lib_inst) $(soname))
 
 # Target for install
-prefix = /usr/local
+prefix = $(TOPDIR)
 install_dirs = $(prefix)/lib $(prefix)/include/isa-l
 $(install_dirs): ; mkdir -p $@
 install: $(sort $(extern_hdrs)) | $(install_dirs) $(lib_name) $(so_lib_name) isa-l.h
